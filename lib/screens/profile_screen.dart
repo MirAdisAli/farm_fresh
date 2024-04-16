@@ -30,142 +30,145 @@ class ProfileScreen extends StatelessWidget {
           fontSize: 20,
         ),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Visibility(
-            visible: false,
-            child: Padding(
-              padding: EdgeInsets.all(18.0),
-              child: TitlesTextWidget(
-                label: "Please login to have unlimited access",
+      body: SingleChildScrollView(
+        //physics: const BouncingScrollPhysics(),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Visibility(
+              visible: false,
+              child: Padding(
+                padding: EdgeInsets.all(18.0),
+                child: TitlesTextWidget(
+                  label: "Please login to have unlimited access",
+                ),
               ),
             ),
-          ),
-          Visibility(
-            visible: true,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-              child: Row(
-                children: [
-                  Container(
-                    width: 60,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Theme.of(context).cardColor,
-                      border: Border.all(color: Colors.green, width: 3),
-                      image: const DecorationImage(
-                        image: NetworkImage(
-                          "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+            Visibility(
+              visible: true,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 60,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Theme.of(context).cardColor,
+                        border: Border.all(color: Colors.green, width: 3),
+                        image: const DecorationImage(
+                          image: NetworkImage(
+                            "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+                          ),
+                          fit: BoxFit.fill,
                         ),
-                        fit: BoxFit.fill,
                       ),
                     ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        TitlesTextWidget(label: "John Doe"),
+                        SizedBox(
+                          height: 6,
+                        ),
+                        SubtitleTextWidget(label: "johndoe@gmail.com")
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(14.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Divider(
+                    thickness: 1,
                   ),
                   const SizedBox(
-                    width: 10,
+                    height: 10,
                   ),
-                  const Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      TitlesTextWidget(label: "John Doe"),
-                      SizedBox(
-                        height: 6,
-                      ),
-                      SubtitleTextWidget(label: "johndoe@gmail.com")
-                    ],
-                  )
+                  const TitlesTextWidget(
+                    label: "Details",
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  CustomListTile(
+                    text: "All Orders",
+                    imagePath: AssetsManager.orderSvg,
+                    function: () {},
+                  ),
+                  CustomListTile(
+                    text: "Address",
+                    imagePath: AssetsManager.address,
+                    function: () {},
+                  ),
+                  CustomListTile(
+                    text: "Viewed Recently",
+                    imagePath: AssetsManager.recent,
+                    function: () {},
+                  ),
+                  const SizedBox(
+                    height: 6,
+                  ),
+                  const Divider(
+                    thickness: 1,
+                  ),
+                  const TitlesTextWidget(
+                    label: "Settings",
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  SwitchListTile(
+                    secondary: Image.asset(
+                      AssetsManager.theme,
+                      height: 34,
+                    ),
+                    title: Text(themeProvider.getIsDarkTheme
+                        ? "Dark Mode"
+                        : "Light Mode"),
+                    value: themeProvider.getIsDarkTheme,
+                    onChanged: (value) {
+                      themeProvider.setDarkTheme(themeValue: value);
+                    },
+                  ),
                 ],
               ),
             ),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(14.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Divider(
-                  thickness: 1,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const TitlesTextWidget(
-                  label: "Details",
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                CustomListTile(
-                  text: "All Orders",
-                  imagePath: AssetsManager.orderSvg,
-                  function: () {},
-                ),
-                CustomListTile(
-                  text: "Address",
-                  imagePath: AssetsManager.address,
-                  function: () {},
-                ),
-                CustomListTile(
-                  text: "Viewed Recently",
-                  imagePath: AssetsManager.recent,
-                  function: () {},
-                ),
-                const SizedBox(
-                  height: 6,
-                ),
-                const Divider(
-                  thickness: 1,
-                ),
-                const TitlesTextWidget(
-                  label: "Settings",
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                SwitchListTile(
-                  secondary: Image.asset(
-                    AssetsManager.theme,
-                    height: 34,
+            Center(
+              child: ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                      30.0,
+                    ),
                   ),
-                  title: Text(themeProvider.getIsDarkTheme
-                      ? "Dark Mode"
-                      : "Light Mode"),
-                  value: themeProvider.getIsDarkTheme,
-                  onChanged: (value) {
-                    themeProvider.setDarkTheme(themeValue: value);
+                ),
+                icon: const Icon(Icons.login),
+                label: const Text("Login"),
+                    onPressed: () async {
+                    Navigator.pushNamed(context, LoginScreen.routeName);
+                    // await MyAppFunctions.showErrorOrWarningDialog(
+                    //     context: context,
+                    //     subtitle: "Are you sure you want to signout",
+                    //     fct: () {},
+                    //     isError: false,);
                   },
-                ),
-              ],
-            ),
-          ),
-          Center(
-            child: ElevatedButton.icon(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(
-                    30.0,
-                  ),
-                ),
               ),
-              icon: const Icon(Icons.login),
-              label: const Text("Login"),
-                  onPressed: () async {
-                  Navigator.pushNamed(context, LoginScreen.routeName);
-                  // await MyAppFunctions.showErrorOrWarningDialog(
-                  //     context: context,
-                  //     subtitle: "Are you sure you want to signout",
-                  //     fct: () {},
-                  //     isError: false,);
-                },
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
