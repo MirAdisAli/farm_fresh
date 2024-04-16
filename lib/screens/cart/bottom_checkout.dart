@@ -13,7 +13,7 @@ class CartBottomSheetWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: Theme.of(context).scaffoldBackgroundColor,
         border: const Border(
-          top: BorderSide(width: 1, color: Colors.grey),
+          top: BorderSide(width: 1, color: Colors.green),
         ),
       ),
       child: Padding(
@@ -31,7 +31,7 @@ class CartBottomSheetWidget extends StatelessWidget {
                         child: TitlesTextWidget(
                             label: "Total (1 product/1 item)")),
                     SubtitleTextWidget(
-                      label: "BDT 20",
+                      label: "BDT 80",
                       color: Colors.green,
                     ),
                   ],

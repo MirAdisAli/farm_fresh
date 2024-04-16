@@ -1,4 +1,5 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
+import 'package:farm_fresh/screens/cart/quantity_btm_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -22,8 +23,7 @@ class CartWidget extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(12.0),
                 child: FancyShimmerImage(
-                  imageUrl:
-                      'https://i.ibb.co/Z8N5LSQ/image1.jpg',
+                  imageUrl: 'https://i.ibb.co/Z8N5LSQ/image1.jpg',
                   height: size.height * 0.2,
                   width: size.height * 0.2,
                 ),
@@ -71,9 +71,24 @@ class CartWidget extends StatelessWidget {
                         ),
                         const Spacer(),
                         OutlinedButton.icon(
-                          onPressed: () {},
+                          onPressed: () async {
+                            await showModalBottomSheet(
+                              backgroundColor:
+                                  Theme.of(context).scaffoldBackgroundColor,
+                              shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(30),
+                                  topRight: Radius.circular(30),
+                                ),
+                              ),
+                              context: context,
+                              builder: (context) {
+                                return const QuantityBottomSheetWidget();
+                              },
+                            );
+                          },
                           icon: const Icon(IconlyLight.arrowDown2),
-                          label: const Text("Qty: 1 KG"),
+                          label: const Text("Qty: 4 KG"),
                           style: OutlinedButton.styleFrom(
                             side: const BorderSide(width: 1),
                             shape: RoundedRectangleBorder(
