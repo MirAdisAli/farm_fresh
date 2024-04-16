@@ -1,3 +1,4 @@
+import 'package:farm_fresh/screens/cart/bottom_checkout.dart';
 import 'package:flutter/material.dart';
 import 'package:farm_fresh/screens/cart/cart_widget.dart';
 import 'package:farm_fresh/services/assets_manager.dart';
@@ -20,6 +21,7 @@ class CartScreen extends StatelessWidget {
             ),
           )
         : Scaffold(
+          bottomSheet: const CartBottomSheetWidget(),
             appBar: AppBar(
               leading: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -27,7 +29,7 @@ class CartScreen extends StatelessWidget {
                   AssetsManager.shoppingCart,
                 ),
               ),
-              title: const TitlesTextWidget(label: "Cart (6)"),
+              title: const TitlesTextWidget(label: "Cart (1)"),
               actions: [
                 IconButton(
                   onPressed: () {},
