@@ -42,7 +42,7 @@ class _SearchScreenState extends State<SearchScreen> {
               AssetsManager.logo,
             ),
           ),
-          title: const TitlesTextWidget(label: "Search products"),
+          title: const TitlesTextWidget(label: "Search Products"),
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
