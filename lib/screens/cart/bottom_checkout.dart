@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:farm_fresh/widgets/subtitle_text.dart';
 import 'package:farm_fresh/widgets/title_text.dart';
 
@@ -23,10 +21,10 @@ class CartBottomSheetWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Flexible(
+              const Flexible(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     FittedBox(
                         child: TitlesTextWidget(
                             label: "Total (1 product/1 item)")),

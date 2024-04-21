@@ -9,7 +9,6 @@ class AssetsManager {
   // Bag
   static String orderSvg = "$bagImagesPath/order_svg.png";
   static String shoppingBasket = "$bagImagesPath/shopping_basket.png";
-  static String shoppingCart = "$bagImagesPath/shopping_cart.png";
 
   // Banners
   static String banner1 = "$bannersImagesPath/banner1.png";

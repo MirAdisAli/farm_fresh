@@ -7,7 +7,6 @@ import 'package:farm_fresh/root_screen.dart';
 import 'consts/theme_data.dart';
 import 'screens/auth/login.dart';
 import 'screens/auth/register.dart';
-import 'screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());

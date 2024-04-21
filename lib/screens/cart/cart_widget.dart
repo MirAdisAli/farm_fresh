@@ -1,8 +1,7 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
+import 'package:farm_fresh/consts/app_constants.dart';
 import 'package:farm_fresh/screens/cart/quantity_btm_sheet.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:farm_fresh/widgets/subtitle_text.dart';
 import 'package:farm_fresh/widgets/title_text.dart';
@@ -23,7 +22,7 @@ class CartWidget extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(12.0),
                 child: FancyShimmerImage(
-                  imageUrl: 'https://i.ibb.co/Z8N5LSQ/image1.jpg',
+                  imageUrl: AppConstants.imageUrl,
                   height: size.height * 0.2,
                   width: size.height * 0.2,
                 ),

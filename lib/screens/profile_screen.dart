@@ -1,7 +1,5 @@
 import 'package:farm_fresh/screens/auth/login.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:provider/provider.dart';
 import 'package:farm_fresh/services/assets_manager.dart';

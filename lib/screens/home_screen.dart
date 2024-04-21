@@ -1,14 +1,11 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:farm_fresh/consts/app_constants.dart';
-import 'package:farm_fresh/providers/theme_provider.dart';
 import 'package:farm_fresh/widgets/products/ctg_rounded_widget.dart';
 import 'package:farm_fresh/widgets/products/latest_arrival.dart';
 
 import '../services/assets_manager.dart';
 import '../widgets/app_name_text.dart';
-import '../widgets/subtitle_text.dart';
 import '../widgets/title_text.dart';
 
 class HomeScreen extends StatelessWidget {

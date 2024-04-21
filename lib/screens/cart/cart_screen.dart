@@ -26,7 +26,7 @@ class CartScreen extends StatelessWidget {
               leading: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Image.asset(
-                  AssetsManager.shoppingCart,
+                  AssetsManager.logo,
                 ),
               ),
               title: const TitlesTextWidget(label: "Cart (1)"),
