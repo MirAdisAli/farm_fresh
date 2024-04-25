@@ -1,8 +1,10 @@
 import 'package:card_swiper/card_swiper.dart';
+import 'package:farm_fresh/providers/products_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:farm_fresh/consts/app_constants.dart';
 import 'package:farm_fresh/widgets/products/ctg_rounded_widget.dart';
 import 'package:farm_fresh/widgets/products/latest_arrival.dart';
+import 'package:provider/provider.dart';
 
 import '../services/assets_manager.dart';
 import '../widgets/app_name_text.dart';
@@ -14,6 +16,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    //final productsProvider = Provider.of<ProductsProvider>(context);
     return Scaffold(
       appBar: AppBar(
         leading: Padding(

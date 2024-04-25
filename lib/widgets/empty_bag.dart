@@ -32,7 +32,7 @@ class EmptyBagWidget extends StatelessWidget {
             height: 20,
           ),
           const TitlesTextWidget(
-            label: "Oops!",
+            label: "Oops",
             fontSize: 40,
             color: Colors.green,
           ),

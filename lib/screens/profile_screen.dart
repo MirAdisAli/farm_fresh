@@ -1,4 +1,5 @@
 import 'package:farm_fresh/screens/auth/login.dart';
+import 'package:farm_fresh/screens/inner_screen/viewed_recently.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:provider/provider.dart';
@@ -45,7 +46,8 @@ class ProfileScreen extends StatelessWidget {
             Visibility(
               visible: true,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 child: Row(
                   children: [
                     Container(
@@ -113,7 +115,10 @@ class ProfileScreen extends StatelessWidget {
                   CustomListTile(
                     text: "Viewed Recently",
                     imagePath: AssetsManager.recent,
-                    function: () {},
+                    function: () {
+                      Navigator.pushNamed(
+                          context, ViewedRecentlyScreen.routName);
+                    },
                   ),
                   const SizedBox(
                     height: 6,
@@ -155,14 +160,14 @@ class ProfileScreen extends StatelessWidget {
                 ),
                 icon: const Icon(Icons.login),
                 label: const Text("Login"),
-                    onPressed: () async {
-                    Navigator.pushNamed(context, LoginScreen.routeName);
-                    // await MyAppFunctions.showErrorOrWarningDialog(
-                    //     context: context,
-                    //     subtitle: "Are you sure you want to signout",
-                    //     fct: () {},
-                    //     isError: false,);
-                  },
+                onPressed: () async {
+                  Navigator.pushNamed(context, LoginScreen.routeName);
+                  // await MyAppFunctions.showErrorOrWarningDialog(
+                  //     context: context,
+                  //     subtitle: "Are you sure you want to signout",
+                  //     fct: () {},
+                  //     isError: false,);
+                },
               ),
             ),
           ],

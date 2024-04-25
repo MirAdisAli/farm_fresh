@@ -1,6 +1,8 @@
-import 'package:farm_fresh/screens/cart/cart_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:provider/provider.dart';
+import 'package:farm_fresh/providers/cart_provider.dart';
+import 'package:farm_fresh/screens/cart/cart_screen.dart';
 import 'package:farm_fresh/screens/home_screen.dart';
 import 'package:farm_fresh/screens/profile_screen.dart';
 import 'package:farm_fresh/screens/search_screen.dart';
@@ -31,6 +33,7 @@ class _RootScreenState extends State<RootScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final cartProvider = Provider.of<CartProvider>(context);
     return Scaffold(
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
@@ -48,27 +51,28 @@ class _RootScreenState extends State<RootScreen> {
           });
           controller.jumpToPage(currentScreen);
         },
-        destinations: const [
-          NavigationDestination(
+        destinations: [
+          const NavigationDestination(
             selectedIcon: Icon(IconlyBold.home),
             icon: Icon(IconlyLight.home),
             label: "Home",
           ),
-          NavigationDestination(
+          const NavigationDestination(
             selectedIcon: Icon(IconlyBold.search),
             icon: Icon(IconlyLight.search),
             label: "Search",
           ),
           NavigationDestination(
-            selectedIcon: Icon(IconlyBold.bag2),
+            selectedIcon: const Icon(IconlyBold.bag2),
             icon: Badge(
               backgroundColor: Colors.green,
               textColor: Colors.white,
-              label: Text("1"),
-              child: Icon(IconlyLight.bag2)),
+              label: Text(cartProvider.getCartitems.length.toString()),
+              child: const Icon(IconlyLight.bag2),
+            ),
             label: "Cart",
           ),
-          NavigationDestination(
+          const NavigationDestination(
             selectedIcon: Icon(IconlyBold.profile),
             icon: Icon(IconlyLight.profile),
             label: "Profile",
